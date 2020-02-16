@@ -1,7 +1,18 @@
 console.log('padLefts script has loaded');
 
 // write this function!
-function padLeft(string, length) {
+function padLeft(word, l) {
+  let wordLength = word.length;
+  let toAdd ="";
+  let numberofDashestobeadded = l-wordLength;
+  if(l > wordLength){
+    for(let i=0; numberofDashestobeadded > i; i++){
+      toAdd = toAdd + "-";
+    }
+  } else {
+    //do nothing
+  }
+  return toAdd + word;
 }
 
 // if the string is already as long as or longer than the length
