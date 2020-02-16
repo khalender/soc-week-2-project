@@ -1,7 +1,12 @@
 console.log('repeater script has loaded');
 
 // write this function!
-function repeater() {
+function repeater(phrase,num) {
+  let result = "";
+  for(let i=0;i<num;i++){
+  result += phrase +"\n";
+  }
+  return result;
 }
 
 console.assert(repeater('horse', 2) === 'horse\nhorse\n', 'first');
