@@ -2,19 +2,18 @@ console.log('devowel script has loaded');
 
 // write this function!
 function devowel(text) {
-  let vowels = ['a','e','i','o','u'];
-  
-  let textwithoutvowels = text.split("").filter(
-    letter => {
-    letter = letter.toLowerCase();
-    let filter = vowels.filter(x => x!==letter);
-    return (filter.length === 5);
-    }
-  );
-  let r ="";
-  textwithoutvowels.forEach(m => r += m);
+  let vowels = "aeuio";
+  const removeVowel = letter => {
+    return (vowels.indexOf(letter.toLowerCase()) === -1)? true: false;
+    };
+  return text
+  .split("")
+  .filter(removeVowel)
+  .join("");
+  // let r ="";
+  // textwithoutvowels.forEach(m => r += m);
  
-  return r;
+  // return r;
 }
 
 // remove all vowels, lower and upper case!

@@ -2,17 +2,19 @@ console.log('tempConverter script has loaded');
 
 // write this function!
 function tempConverter(temp, deg) {
+  console.log("degree " + deg)
   
   if(String(deg) === 'farenheit'){
     return (((Number(temp))*1.8)+32);
   }
   else if(String(deg).toLowerCase() === 'celcius'){
-    return ((Number(temp)-32)*5/9).toFixed(2);
+    return Number(((Number(temp)-32)*5/9).toFixed(2));
   } else{
     return deg + " is not supported"
   }
   
 }
+debugger
 
 // if the user wants to convert to farenheit
 console.assert(tempConverter(53, 'farenheit') === 127.4, 'first');
@@ -20,7 +22,7 @@ console.assert(tempConverter(0, 'farenheit') === 32, 'second');
 console.assert(tempConverter(-40, 'farenheit') === -40, 'third');
 
 // if the user wants to convert to celcius
-console.assert(tempConverter(0, 'celcius') == -17.78, 'fourth result = ' +tempConverter(0, 'celcius')+ " expected: -17.78" );
+console.assert(tempConverter(0, 'celcius') === -17.78, 'fourth result = ' +tempConverter(0, 'celcius')+ " expected: -17.78" );
 console.assert(tempConverter(4, 'celcius') == -15.56, 'fifth');
 console.assert(tempConverter(12.4, 'celcius') == -10.89, 'sixth');
 
